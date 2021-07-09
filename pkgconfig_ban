@@ -1,0 +1,16 @@
+#
+# This file contains pkgconfig build requirements that get picked up but are 
+# undesirable. One name per line, no whitespace.
+#
+"$LIBGBM"
+khronos-opengl-registry
+libsystemd-daemon
+tslib-0.0
+libsha1
+fontutil
+windowsdriproto
+xcb-ewmh
+xcb-icccm
+xcb-image
+wayland-eglstream-protocols
+libselinux

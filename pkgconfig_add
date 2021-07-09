@@ -1,0 +1,22 @@
+#
+# This file contains extra pkgconfig build requirements that don't get picked up but are 
+# desirable. One name per line, no whitespace.
+#
+xcb-keysyms
+xorg-macros
+pixman-1
+udev
+sm
+ice
+gl
+dri2proto
+dri3proto
+glproto
+pciaccess
+xfont
+xf86dgaproto
+fontutil
+xshmfence
+xdmcp
+xau
+epoxy
