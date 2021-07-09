@@ -4,7 +4,7 @@
 #
 Name     : xwayland
 Version  : 21.1.2
-Release  : 1
+Release  : 2
 URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.2.tar.xz
 Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.2.tar.xz
 Summary  : X Server for Wayland
@@ -105,7 +105,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1625839409
+export SOURCE_DATE_EPOCH=1625840683
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
@@ -120,6 +120,8 @@ ninja -v -C builddir
 mkdir -p %{buildroot}/usr/share/package-licenses/xwayland
 cp %{_builddir}/xwayland-21.1.2/COPYING %{buildroot}/usr/share/package-licenses/xwayland/11d1ae389a1a78f7832586e4c2a0c3c7263b7475
 DESTDIR=%{buildroot} ninja -C builddir install
+## Remove excluded files
+rm -f %{buildroot}/usr/share/man/man1/Xserver.1
 
 %files
 %defattr(-,root,root,-)
@@ -139,5 +141,4 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files man
 %defattr(0644,root,root,0755)
-/usr/share/man/man1/Xserver.1
 /usr/share/man/man1/Xwayland.1
