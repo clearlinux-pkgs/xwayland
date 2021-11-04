@@ -6,7 +6,7 @@
 #
 Name     : xwayland
 Version  : 21.1.2
-Release  : 6
+Release  : 7
 URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.2.tar.xz
 Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.2.tar.xz
 Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.2.tar.xz.sig
@@ -56,6 +56,7 @@ BuildRequires : xtrans-dev
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
+Patch1: perffix.patch
 
 %description
 X Server
@@ -112,6 +113,7 @@ man components for the xwayland package.
 %prep
 %setup -q -n xwayland-21.1.2
 cd %{_builddir}/xwayland-21.1.2
+%patch1 -p1
 pushd ..
 cp -a xwayland-21.1.2 buildavx2
 popd
@@ -121,7 +123,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634687227
+export SOURCE_DATE_EPOCH=1636036549
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
