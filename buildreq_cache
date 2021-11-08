@@ -1,10 +1,7 @@
-21.1.2
+21.1.3
 pkgconfig(audit)
 pkgconfig(libbsd)
-pkgconfig(libselinux)
-pkgconfig(libsha1)
 pkgconfig(libtirpc)
-pkgconfig(wayland-eglstream-protocols)
 pkgconfig(xfont2)
 pkgconfig(xkbcomp)
 pkgconfig(xkbfile)
