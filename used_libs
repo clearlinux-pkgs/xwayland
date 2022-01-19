@@ -11,3 +11,4 @@ libnettle.so.8
 libpixman-1.so.0
 libtirpc.so.3
 libwayland-client.so.0
+libxcvt.so.0

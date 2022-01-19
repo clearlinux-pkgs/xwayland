@@ -14,3 +14,4 @@ xcb-icccm
 xcb-image
 wayland-eglstream-protocols
 libselinux
+xorg-sgml-doctools

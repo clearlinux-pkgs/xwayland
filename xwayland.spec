@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 21.1.4
-Release  : 9
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.4.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.4.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-21.1.4.tar.xz.sig
+Version  : 22.0.99.901
+Release  : 10
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.0.99.901.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.0.99.901.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.0.99.901.tar.xz.sig
 Summary  : X Server for Wayland
 Group    : Development/Tools
 License  : MIT
@@ -25,6 +25,7 @@ BuildRequires : graphviz
 BuildRequires : libdmx-dev
 BuildRequires : libgcrypt-dev
 BuildRequires : libxshmfence-dev
+BuildRequires : libxslt-bin
 BuildRequires : nettle-dev
 BuildRequires : pkgconfig(audit)
 BuildRequires : pkgconfig(dri2proto)
@@ -35,6 +36,7 @@ BuildRequires : pkgconfig(glproto)
 BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libbsd)
 BuildRequires : pkgconfig(libtirpc)
+BuildRequires : pkgconfig(libxcvt)
 BuildRequires : pkgconfig(pciaccess)
 BuildRequires : pkgconfig(pixman-1)
 BuildRequires : pkgconfig(sm)
@@ -52,6 +54,7 @@ BuildRequires : pkgconfig(xshmfence)
 BuildRequires : wayland-dev
 BuildRequires : wayland-protocols-dev
 BuildRequires : xkbcomp-bin
+BuildRequires : xmlto
 BuildRequires : xtrans-dev
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -110,10 +113,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-21.1.4
-cd %{_builddir}/xwayland-21.1.4
+%setup -q -n xwayland-22.0.99.901
+cd %{_builddir}/xwayland-22.0.99.901
 pushd ..
-cp -a xwayland-21.1.4 buildavx2
+cp -a xwayland-22.0.99.901 buildavx2
 popd
 
 %build
@@ -121,7 +124,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639515831
+export SOURCE_DATE_EPOCH=1642632800
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
@@ -139,7 +142,7 @@ ninja -v -C builddiravx2
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/xwayland
-cp %{_builddir}/xwayland-21.1.4/COPYING %{buildroot}/usr/share/package-licenses/xwayland/11d1ae389a1a78f7832586e4c2a0c3c7263b7475
+cp %{_builddir}/xwayland-22.0.99.901/COPYING %{buildroot}/usr/share/package-licenses/xwayland/11d1ae389a1a78f7832586e4c2a0c3c7263b7475
 DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
 ## Remove excluded files
