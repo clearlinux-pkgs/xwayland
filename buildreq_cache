@@ -1,4 +1,4 @@
-22.0.99.901
+22.0.99.902
 libxslt-bin
 pkgconfig(audit)
 pkgconfig(libbsd)
@@ -7,6 +7,5 @@ pkgconfig(libxcvt)
 pkgconfig(xfont2)
 pkgconfig(xkbcomp)
 pkgconfig(xkbfile)
-pkgconfig(xorg-sgml-doctools)
 xkbcomp-bin
 xmlto
