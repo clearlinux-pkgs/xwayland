@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 22.1.0
-Release  : 14
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.0.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.0.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.0.tar.xz.sig
+Version  : 22.1.1
+Release  : 15
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.1.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.1.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.1.tar.xz.sig
 Summary  : X Server for Wayland
 Group    : Development/Tools
 License  : MIT
@@ -113,10 +113,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-22.1.0
-cd %{_builddir}/xwayland-22.1.0
+%setup -q -n xwayland-22.1.1
+cd %{_builddir}/xwayland-22.1.1
 pushd ..
-cp -a xwayland-22.1.0 buildavx2
+cp -a xwayland-22.1.1 buildavx2
 popd
 
 %build
@@ -124,7 +124,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1645048569
+export SOURCE_DATE_EPOCH=1648742154
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
@@ -142,7 +142,7 @@ ninja -v -C builddiravx2
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/xwayland
-cp %{_builddir}/xwayland-22.1.0/COPYING %{buildroot}/usr/share/package-licenses/xwayland/11d1ae389a1a78f7832586e4c2a0c3c7263b7475
+cp %{_builddir}/xwayland-22.1.1/COPYING %{buildroot}/usr/share/package-licenses/xwayland/11d1ae389a1a78f7832586e4c2a0c3c7263b7475
 DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
 ## Remove excluded files
