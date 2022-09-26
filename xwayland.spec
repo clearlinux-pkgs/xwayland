@@ -6,7 +6,7 @@
 #
 Name     : xwayland
 Version  : 22.1.3
-Release  : 21
+Release  : 22
 URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.3.tar.xz
 Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.3.tar.xz
 Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.3.tar.xz.sig
