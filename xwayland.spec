@@ -5,15 +5,16 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 22.1.8
-Release  : 31
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.8.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.8.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-22.1.8.tar.xz.sig
-Summary  : X Server for Wayland
+Version  : 23.0.99.901
+Release  : 32
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.0.99.901.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.0.99.901.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.0.99.901.tar.xz.sig
+Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
 Requires: xwayland-bin = %{version}-%{release}
+Requires: xwayland-data = %{version}-%{release}
 Requires: xwayland-filemap = %{version}-%{release}
 Requires: xwayland-license = %{version}-%{release}
 Requires: xwayland-man = %{version}-%{release}
@@ -29,13 +30,16 @@ BuildRequires : libxshmfence-dev
 BuildRequires : libxslt-bin
 BuildRequires : nettle-dev
 BuildRequires : pkgconfig(audit)
+BuildRequires : pkgconfig(dri)
 BuildRequires : pkgconfig(dri2proto)
 BuildRequires : pkgconfig(dri3proto)
 BuildRequires : pkgconfig(epoxy)
+BuildRequires : pkgconfig(gbm)
 BuildRequires : pkgconfig(gl)
 BuildRequires : pkgconfig(glproto)
 BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libbsd)
+BuildRequires : pkgconfig(libdrm)
 BuildRequires : pkgconfig(libtirpc)
 BuildRequires : pkgconfig(libxcvt)
 BuildRequires : pkgconfig(pciaccess)
@@ -71,6 +75,7 @@ can draw into.
 %package bin
 Summary: bin components for the xwayland package.
 Group: Binaries
+Requires: xwayland-data = %{version}-%{release}
 Requires: xwayland-license = %{version}-%{release}
 Requires: xwayland-filemap = %{version}-%{release}
 
@@ -78,10 +83,19 @@ Requires: xwayland-filemap = %{version}-%{release}
 bin components for the xwayland package.
 
 
+%package data
+Summary: data components for the xwayland package.
+Group: Data
+
+%description data
+data components for the xwayland package.
+
+
 %package dev
 Summary: dev components for the xwayland package.
 Group: Development
 Requires: xwayland-bin = %{version}-%{release}
+Requires: xwayland-data = %{version}-%{release}
 Provides: xwayland-devel = %{version}-%{release}
 Requires: xwayland = %{version}-%{release}
 
@@ -114,10 +128,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-22.1.8
-cd %{_builddir}/xwayland-22.1.8
+%setup -q -n xwayland-23.0.99.901
+cd %{_builddir}/xwayland-23.0.99.901
 pushd ..
-cp -a xwayland-22.1.8 buildavx2
+cp -a xwayland-23.0.99.901 buildavx2
 popd
 
 %build
@@ -125,7 +139,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675788891
+export SOURCE_DATE_EPOCH=1677864289
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
@@ -158,6 +172,10 @@ rm -f %{buildroot}*/usr/lib64/xorg/protocol.txt
 %defattr(-,root,root,-)
 /usr/bin/Xwayland
 /usr/share/clear/optimized-elf/bin*
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/applications/org.freedesktop.Xwayland.desktop
 
 %files dev
 %defattr(-,root,root,-)
