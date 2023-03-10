@@ -1,10 +1,9 @@
-23.0.99.901
+23.0.99.902
 libxslt-bin
 pkgconfig(audit)
 pkgconfig(dri)
 pkgconfig(gbm)
 pkgconfig(libbsd)
-pkgconfig(libdecor-0)
 pkgconfig(libdrm)
 pkgconfig(libtirpc)
 pkgconfig(libxcvt)
