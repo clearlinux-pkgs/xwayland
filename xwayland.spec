@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 23.1.0
-Release  : 34
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.0.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.0.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.0.tar.xz.sig
+Version  : 23.1.1
+Release  : 35
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.1.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.1.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -129,10 +129,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-23.1.0
-cd %{_builddir}/xwayland-23.1.0
+%setup -q -n xwayland-23.1.1
+cd %{_builddir}/xwayland-23.1.1
 pushd ..
-cp -a xwayland-23.1.0 buildavx2
+cp -a xwayland-23.1.1 buildavx2
 popd
 
 %build
@@ -140,7 +140,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679508852
+export SOURCE_DATE_EPOCH=1680105466
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
