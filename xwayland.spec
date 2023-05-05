@@ -7,7 +7,7 @@
 #
 Name     : xwayland
 Version  : 23.1.1
-Release  : 36
+Release  : 37
 URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.1.tar.xz
 Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.1.tar.xz
 Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.1.tar.xz.sig
@@ -130,7 +130,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683038765
+export SOURCE_DATE_EPOCH=1683245124
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
