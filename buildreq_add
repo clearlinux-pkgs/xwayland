@@ -13,3 +13,4 @@ libxshmfence-dev
 graphviz
 wayland-dev
 wayland-protocols-dev
+libei-dev

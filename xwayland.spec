@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 23.1.2
-Release  : 39
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.2.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.2.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.2.tar.xz.sig
+Version  : 23.1.99.902
+Release  : 40
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.99.902.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.99.902.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.99.902.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -25,6 +25,7 @@ BuildRequires : font-util-dev
 BuildRequires : freetype-dev
 BuildRequires : graphviz
 BuildRequires : libdmx-dev
+BuildRequires : libei-dev
 BuildRequires : libgcrypt-dev
 BuildRequires : libxshmfence-dev
 BuildRequires : libxslt-bin
@@ -44,6 +45,7 @@ BuildRequires : pkgconfig(libtirpc)
 BuildRequires : pkgconfig(libxcvt)
 BuildRequires : pkgconfig(pciaccess)
 BuildRequires : pkgconfig(pixman-1)
+BuildRequires : pkgconfig(presentproto)
 BuildRequires : pkgconfig(sm)
 BuildRequires : pkgconfig(udev)
 BuildRequires : pkgconfig(xau)
@@ -119,10 +121,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-23.1.2
-cd %{_builddir}/xwayland-23.1.2
+%setup -q -n xwayland-23.1.99.902
+cd %{_builddir}/xwayland-23.1.99.902
 pushd ..
-cp -a xwayland-23.1.2 buildavx2
+cp -a xwayland-23.1.99.902 buildavx2
 popd
 
 %build
@@ -130,7 +132,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686068027
+export SOURCE_DATE_EPOCH=1691083223
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
