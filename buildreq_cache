@@ -1,4 +1,4 @@
-23.1.99.902
+23.2.0
 libxslt-bin
 pkgconfig(audit)
 pkgconfig(dri)
@@ -7,7 +7,6 @@ pkgconfig(libbsd)
 pkgconfig(libdrm)
 pkgconfig(libtirpc)
 pkgconfig(libxcvt)
-pkgconfig(presentproto)
 pkgconfig(xfont2)
 pkgconfig(xkbcomp)
 pkgconfig(xkbfile)

@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 23.1.99.902
-Release  : 40
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.99.902.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.99.902.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.1.99.902.tar.xz.sig
+Version  : 23.2.0
+Release  : 41
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.0.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.0.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -45,7 +45,6 @@ BuildRequires : pkgconfig(libtirpc)
 BuildRequires : pkgconfig(libxcvt)
 BuildRequires : pkgconfig(pciaccess)
 BuildRequires : pkgconfig(pixman-1)
-BuildRequires : pkgconfig(presentproto)
 BuildRequires : pkgconfig(sm)
 BuildRequires : pkgconfig(udev)
 BuildRequires : pkgconfig(xau)
@@ -121,10 +120,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-23.1.99.902
-cd %{_builddir}/xwayland-23.1.99.902
+%setup -q -n xwayland-23.2.0
+cd %{_builddir}/xwayland-23.2.0
 pushd ..
-cp -a xwayland-23.1.99.902 buildavx2
+cp -a xwayland-23.2.0 buildavx2
 popd
 
 %build
@@ -132,7 +131,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1691083223
+export SOURCE_DATE_EPOCH=1692204339
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O3 -g -fopt-info-vec "
 unset LDFLAGS
