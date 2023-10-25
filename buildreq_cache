@@ -1,9 +1,9 @@
-23.2.1
+23.2.2
 libxslt-bin
 pkgconfig(audit)
 pkgconfig(dri)
 pkgconfig(gbm)
-pkgconfig(libbsd)
+pkgconfig(libbsd-overlay)
 pkgconfig(libdrm)
 pkgconfig(libtirpc)
 pkgconfig(libxcvt)
