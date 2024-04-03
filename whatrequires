@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+compat-wlroots-soname11
 kwin
 mutter
 wlroots
