@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 23.2.5
-Release  : 46
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.5.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.5.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.5.tar.xz.sig
+Version  : 23.2.6
+Release  : 47
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.6.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.6.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-23.2.6.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT
@@ -122,10 +122,10 @@ man components for the xwayland package.
 
 
 %prep
-%setup -q -n xwayland-23.2.5
-cd %{_builddir}/xwayland-23.2.5
+%setup -q -n xwayland-23.2.6
+cd %{_builddir}/xwayland-23.2.6
 pushd ..
-cp -a xwayland-23.2.5 buildavx2
+cp -a xwayland-23.2.6 buildavx2
 popd
 
 %build
@@ -133,7 +133,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1712166216
+export SOURCE_DATE_EPOCH=1712689872
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="-O3 -g -fopt-info-vec "
 export AR=gcc-ar
