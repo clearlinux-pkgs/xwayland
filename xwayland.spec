@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x14706DBE1E4B4540 (fourdan@xfce.org)
 #
 Name     : xwayland
-Version  : 24.1.7
-Release  : 57
-URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz
-Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz
-Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz.sig
+Version  : 24.1.8
+Release  : 58
+URL      : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.8.tar.xz
+Source0  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.8.tar.xz
+Source1  : https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.8.tar.xz.sig
 Source2  : 14706DBE1E4B4540.pkey
 Summary  : No detailed summary available
 Group    : Development/Tools
@@ -129,10 +129,10 @@ chmod 700 .gnupg
 gpg --homedir .gnupg --import %{SOURCE2}
 gpg --homedir .gnupg --status-fd 1 --verify %{SOURCE1} %{SOURCE0} > gpg.status
 grep -E '^\[GNUPG:\] (GOODSIG|EXPKEYSIG) 14706DBE1E4B4540' gpg.status
-%setup -q -n xwayland-24.1.7
-cd %{_builddir}/xwayland-24.1.7
+%setup -q -n xwayland-24.1.8
+cd %{_builddir}/xwayland-24.1.8
 pushd ..
-cp -a xwayland-24.1.7 buildavx2
+cp -a xwayland-24.1.8 buildavx2
 popd
 
 %build
@@ -140,7 +140,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1750183330
+export SOURCE_DATE_EPOCH=1750436025
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="-O3 -g -fopt-info-vec "
 export AR=gcc-ar
